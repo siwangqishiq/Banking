@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <RelativeLayout
+        android:id="@+id/j_banner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_bar_bg" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_centerInParent="true"
+            android:text="@string/news_indicator" />
+        <Button
+            android:paddingLeft="5dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/back_btn"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            />
+    </RelativeLayout>
+	
+    <com.airad.bankingdemo.ui.GalleryListView
+        android:id="@+id/galleryListView"
+        android:layout_below="@id/j_banner"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="#00000000"
+        android:fadingEdge="none"
+        />
+    
+    <RelativeLayout
+        android:id="@+id/newsContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/j_banner"
+        android:layout_alignParentTop="true" >
+    </RelativeLayout>
+    
+    <ImageView
+        android:layout_below="@id/j_banner"
+        android:layout_width="fill_parent"
+        android:scaleType="fitXY"
+        android:layout_height="wrap_content"
+        android:src="@drawable/top_bar_shadow" />
+
+</RelativeLayout>

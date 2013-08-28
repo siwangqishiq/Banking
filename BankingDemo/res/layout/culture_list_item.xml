@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/title"
+        android:singleLine="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:textColor="#000000"
+        android:text="dasss"
+        android:textSize="17dp" />
+    
+    <TextView
+        android:drawableLeft="@drawable/triangle_ic"
+        android:singleLine="true"
+        android:id="@+id/thumb"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:textColor="#B0AB9F"
+        android:drawablePadding="5dp"
+        android:text="dasss"
+        android:textSize="16dp" />
+
+</LinearLayout>
