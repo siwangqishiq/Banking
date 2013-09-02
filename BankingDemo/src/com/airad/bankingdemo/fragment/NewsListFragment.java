@@ -25,9 +25,11 @@ public class NewsListFragment extends Fragment {
 	private Button mBack;
 	private ListView mListView;
 	private ArrayList<String> dataList;
+	protected int type=-1;
 
-	public static NewsListFragment newInstance() {
+	public static NewsListFragment newInstance(int type) {
 		final NewsListFragment f = new NewsListFragment();
+		f.type = type;
 		return f;
 	}
 
@@ -46,10 +48,32 @@ public class NewsListFragment extends Fragment {
 
 	private void initData() {
 		dataList = new ArrayList<String>();
-		dataList.add("三中全会宏观经济要稳（稳增长），微观经济要活（微刺激），社会政策要托底（社会体制改革）；");
-		dataList.add("下半年宏观经济政策稳增长就要稳投资，重点投资于棚户区改造、信息消费、环保产业、铁路建设和基础设施；");
-		dataList.add("中国金融综合监管改革迈出了第一步；");
-		dataList.add("铁路投融资体制改革是变相发债");
+		switch(type){
+		case 1:
+			dataList.add("中国经济前景要紧盯债务与通胀");
+			dataList.add("发改委下放企业券预审权便利地方“稳增长”");
+			break;
+		case 2:
+			dataList.add("上海自贸区将引入投资协定新规则");
+			dataList.add("上海出台42条举措推动金融改革");
+			dataList.add("广东出台36项措施推进提升前海地位");
+			break;
+		case 3:
+			dataList.add("国有大银行开始悄悄为存款利率市场化预热");
+			dataList.add("中国粮食收购政策有望迎来市场化改革");
+			break;
+		case 4:
+			dataList.add("中国利率市场化很快将有再度推进");
+			dataList.add("2030年中国城市人口将超过10亿");
+			dataList.add("多地政府酝酿上调基准地价以缓解偿债压力");
+			dataList.add("2013-2017年中国将投资6200亿元建特高压智能电网");
+			break;
+		case 5:
+			dataList.add("国内地价高涨隐现经济泡沫破裂的前兆");
+			dataList.add("警惕融资租赁繁荣背后所隐含的巨大风险");
+			dataList.add("欧美隐性贸易壁垒对中国出口威胁更大");
+			break;
+		}
 	}
 
 	@Override

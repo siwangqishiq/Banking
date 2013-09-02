@@ -27,7 +27,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class NewsFragment extends Fragment {
-	public static final String TAG="NEWS";
+	public static final String TAG = "NEWS";
 	private View view;
 	private MainActivity mMainActivity;
 	private GalleryListView mListView;
@@ -49,28 +49,28 @@ public class NewsFragment extends Fragment {
 		News news1 = new News();
 		news1.setPicId(R.drawable.news_thumb_1);
 		news1.setTitle("【政策】");
-		news1.setSecondTitle("三中全会宏观经济要稳");
+		news1.setSecondTitle("中国经济前景要紧盯债务与通胀");
 		News news2 = new News();
 		news2.setPicId(R.drawable.news_thumb_2);
 		news2.setTitle("【市场】");
-		news2.setSecondTitle("苏宁云商确认将筹备申请成立...");
+		news2.setSecondTitle("上海自贸区将引入投资协定新规则");
 		News news3 = new News();
 		news3.setPicId(R.drawable.news_thumb_3);
 		news3.setTitle("【经营】");
-		news3.setSecondTitle("P2C国家队————江苏省“开鑫贷”");
+		news3.setSecondTitle("国有大银行开始悄悄为存款利率市场化预热");
 		News news4 = new News();
 		news4.setPicId(R.drawable.news_thumb_4);
-		news4.setTitle("【风险】");
-		news4.setSecondTitle("警示亚太有出现金融风暴的迹象");
+		news4.setTitle("【动态】");
+		news4.setSecondTitle("中国利率市场化很快将有再度推进");
+		News news5 = new News();
+		news5.setPicId(R.drawable.news_thumb_1);
+		news5.setTitle("【风险】");
+		news5.setSecondTitle("国内地价高涨隐现经济泡沫破裂的前兆");
 		newsList.add(news1);
 		newsList.add(news2);
 		newsList.add(news3);
 		newsList.add(news4);
-		
-		newsList.add(news1);
-		newsList.add(news2);
-		newsList.add(news3);
-		newsList.add(news4);
+		newsList.add(news5);
 
 		imageNewsList = new ArrayList<ImageNews>();
 		ImageNews item1 = new ImageNews();
@@ -118,11 +118,10 @@ public class NewsFragment extends Fragment {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int index,
 					long arg3) {
 				FragmentManager fm = getActivity().getSupportFragmentManager();
-				if(fm.findFragmentByTag(NewsListFragment.TAG)==null){
+				if (fm.findFragmentByTag(NewsListFragment.TAG) == null) {
 					FragmentTransaction ft = fm.beginTransaction();
-					if (mNewsListFragment == null) {
-						mNewsListFragment = NewsListFragment.newInstance();
-					}
+					System.out.println("--->"+index);
+					mNewsListFragment = NewsListFragment.newInstance(index);
 					ft.add(R.id.newsContainer, mNewsListFragment,
 							NewsListFragment.TAG);
 					ft.addToBackStack(TAG);
@@ -130,9 +129,8 @@ public class NewsFragment extends Fragment {
 				}
 			}
 		});
-		
+
 	}
-	
 
 	private final class ImagePagerAdapter extends FragmentStatePagerAdapter {
 		public ImagePagerAdapter(FragmentManager fm) {
